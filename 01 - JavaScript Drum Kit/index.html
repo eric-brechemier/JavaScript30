@@ -69,6 +69,7 @@ window.addEventListener('keydown', function( event ){
   if ( element === null ) {
     return;
   }
+  element.currentTime = 0; // rewind to the start
   element.play();
 });
 </script>
