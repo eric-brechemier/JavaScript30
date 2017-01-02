@@ -64,13 +64,13 @@ window.addEventListener('keydown', function( event ){
     return;
   }
   var
-    selector = 'audio[data-key="'+ event.keyCode +'"]',
-    element = document.querySelector( selector );
-  if ( element === null ) {
+    audioSelector = 'audio[data-key="'+ event.keyCode +'"]',
+    audioElement = document.querySelector( audioSelector );
+  if ( audioElement === null ) {
     return;
   }
-  element.currentTime = 0; // rewind to the start
-  element.play();
+  audioElement.currentTime = 0; // rewind to the start
+  audioElement.play();
 });
 </script>
 
