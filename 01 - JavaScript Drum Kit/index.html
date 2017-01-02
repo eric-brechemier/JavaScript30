@@ -65,13 +65,17 @@ window.addEventListener('keydown', function( event ){
   }
   var
     dataKeySelector = '[data-key="'+ event.keyCode +'"]',
+    visualKeySelector = '.key' + dataKeySelector,
+    visualKeyElement = document.querySelector( visualKeySelector ),
     audioSelector = 'audio' + dataKeySelector,
     audioElement = document.querySelector( audioSelector );
-  if ( audioElement === null ) {
-    return;
+  if ( visualKeyElement !== null ) {
+    visualKeyElement.classList.add( 'playing' );
   }
-  audioElement.currentTime = 0; // rewind to the start
-  audioElement.play();
+  if ( audioElement !== null ) {
+    audioElement.currentTime = 0; // rewind to the start
+    audioElement.play();
+  }
 });
 </script>
 
