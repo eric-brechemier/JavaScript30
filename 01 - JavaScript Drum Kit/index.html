@@ -70,6 +70,13 @@ window.addEventListener('keydown', function( event ){
     audioSelector = 'audio' + dataKeySelector,
     audioElement = document.querySelector( audioSelector );
   if ( visualKeyElement !== null ) {
+    function transitionEndListener(){
+      visualKeyElement.removeEventListener(
+        'transitionend', transitionEndListener
+      );
+      visualKeyElement.classList.remove( 'playing' );
+    }
+    visualKeyElement.addEventListener('transitionend', transitionEndListener );
     visualKeyElement.classList.add( 'playing' );
   }
   if ( audioElement !== null ) {
