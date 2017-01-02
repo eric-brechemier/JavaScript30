@@ -64,7 +64,8 @@ window.addEventListener('keydown', function( event ){
     return;
   }
   var
-    audioSelector = 'audio[data-key="'+ event.keyCode +'"]',
+    dataKeySelector = '[data-key="'+ event.keyCode +'"]',
+    audioSelector = 'audio' + dataKeySelector,
     audioElement = document.querySelector( audioSelector );
   if ( audioElement === null ) {
     return;
