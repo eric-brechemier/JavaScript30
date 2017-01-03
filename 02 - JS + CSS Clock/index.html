@@ -70,19 +70,22 @@
   </style>
 
   <script>
-  function tick() {
-    var
-      time = new Date(),
-      seconds = time.getSeconds(),
-      secondsAngleInDegrees = 360 * seconds / 60,
-      minutes = time.getMinutes(),
-      minutesAngleInDegrees = 360 * minutes / 60,
-      hours = time.getHours(),
-      hoursAngleInDegrees = 360 * hours / 12;
-    console.log( hours, minutes, seconds );
-    console.log( hoursAngleInDegrees, minutesAngleInDegrees, secondsAngleInDegrees );
-  }
-  setInterval(tick, 1000);
+  function privately( doIt ){ doIt(); }
+  privately(function(){
+    function tick() {
+      var
+        time = new Date(),
+        seconds = time.getSeconds(),
+        secondsAngleInDegrees = 360 * seconds / 60,
+        minutes = time.getMinutes(),
+        minutesAngleInDegrees = 360 * minutes / 60,
+        hours = time.getHours(),
+        hoursAngleInDegrees = 360 * hours / 12;
+      console.log( hours, minutes, seconds );
+      console.log( hoursAngleInDegrees, minutesAngleInDegrees, secondsAngleInDegrees );
+    }
+    setInterval(tick, 1000);
+  });
   </script>
 </body>
 </html>
