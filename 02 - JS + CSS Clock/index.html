@@ -72,6 +72,15 @@
   <script>
   function privately( doIt ){ doIt(); }
   privately(function(){
+    var
+      secondHandElement = document.getElementById('secondHand'),
+      minuteHandElement = document.getElementById('minuteHand'),
+      hourHandElement = document.getElementById('hourHand');
+
+    function rotate(handElement, angleInDegrees) {
+      handElement.style.transform = "rotate("+angleInDegrees+"deg)"
+    }
+
     function tick() {
       var
         time = new Date(),
@@ -81,6 +90,11 @@
         minutesAngleInDegrees = 360 * minutes / 60,
         hours = time.getHours(),
         hoursAngleInDegrees = 360 * hours / 12;
+
+      rotate(secondHandElement, secondsAngleInDegrees);
+      rotate(minuteHandElement, minutesAngleInDegrees);
+      rotate(hourHandElement, hoursAngleInDegrees);
+
       console.log( hours, minutes, seconds );
       console.log( hoursAngleInDegrees, minutesAngleInDegrees, secondsAngleInDegrees );
     }
