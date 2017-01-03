@@ -78,7 +78,9 @@
       hourHandElement = document.getElementById('hourHand');
 
     function rotate(handElement, angleInDegrees) {
-      handElement.style.transform = "rotate("+angleInDegrees+"deg)"
+      // offset by 90 degrees to start upright (12 o'clock)
+      // instead of flat (9 o'clock)
+      handElement.style.transform = "rotate("+(90 + angleInDegrees)+"deg)"
     }
 
     function tick() {
