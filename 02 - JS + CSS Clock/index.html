@@ -71,7 +71,12 @@
 
   <script>
   function tick() {
-    console.log( Number(new Date()) );
+    var
+      time = new Date(),
+      seconds = time.getSeconds(),
+      minutes = time.getMinutes(),
+      hours = time.getHours();
+    console.log( hours, minutes, seconds );
   }
   setInterval(tick, 1000);
   </script>
