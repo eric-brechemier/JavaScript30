@@ -8,6 +8,7 @@ to the [JavaScript 30 Day Challenge](https://JavaScript30.com):
 [EB]: http://eric.brechemier.name "Eric Bréchemier"
 
 * [01 - JavaScript Drum Kit](01%20-%20JavaScript%20Drum%20Kit/index.html)
+* [02 - JS + CSS Clock](02%20-%20JS%20%2B%20CSS%20Clock/index.html)
 
 ## Sources on GitHub
 
